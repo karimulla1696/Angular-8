@@ -537,22 +537,22 @@
 
 <!--<router-outlet></router-outlet>-->
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h1>I am in App component</h1>
-      <hr>
-      <app-servers></app-servers>
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--      <h1>I am in App component</h1>-->
+<!--      <hr>-->
+<!--      <app-servers></app-servers>-->
 <!--       attribute selector  -->
 <!--      <div app-servers></div>-->
 <!--      class selector-->
-      <div class="app-servers"></div>
-      <app-warning-alert></app-warning-alert>
-      <app-success-alert></app-success-alert>
+<!--      <div class="app-servers"></div>-->
+<!--      <app-warning-alert></app-warning-alert>-->
+<!--      <app-success-alert></app-success-alert>-->
 
-    </div>
-  </div>
-</div>
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 
 <!--<div class="container">-->
@@ -565,4 +565,17 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+<!--      <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button>-->
+      <button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
+      <p *ngIf="showSecret">Secret Password = tuna</p>
+      <div *ngFor="let logItems of log"
+      [ngStyle]="{backgroundColor: logItems >= 5 ? 'blue' : 'transparent'}"
+      [ngClass]="{'white-text': logItems >= 5}">{{ logItems }}</div>
+    </div>
+  </div>
+</div>
 
