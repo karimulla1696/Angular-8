@@ -572,9 +572,11 @@
 <!--      <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button>-->
       <button class="btn btn-primary" (click)="onToggleDisplay()">Display Details</button>
       <p *ngIf="showSecret">Secret Password = tuna</p>
-      <div *ngFor="let logItems of log"
-      [ngStyle]="{backgroundColor: logItems >= 5 ? 'blue' : 'transparent'}"
-      [ngClass]="{'white-text': logItems >= 5}">{{ logItems }}</div>
+      <div *ngFor="let logItems of log; let i = index"
+      [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+      [ngClass]="{'white-text': i >= 4}">
+        {{ logItems }}
+      </div>
     </div>
   </div>
 </div>
