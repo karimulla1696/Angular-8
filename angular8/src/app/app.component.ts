@@ -15,6 +15,7 @@ export class AppComponent {
   username = '';
   showSecret = false;
   log = [];
+  serverElements = [];
 
   onToggleDisplay() {
     this.showSecret = !this.showSecret;
