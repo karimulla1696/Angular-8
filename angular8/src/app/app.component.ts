@@ -15,7 +15,27 @@ export class AppComponent {
   username = '';
   showSecret = false;
   log = [];
-  serverElements = [];
+  serverElements = [{ type: 'server', name: 'Testserver', content: 'Just a touch!' }];
+
+  onSeverAdded(serverData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'server',
+      name: serverData.serverName,
+      content: serverData.serverContent
+    })
+  }
+
+  onAddBlueprintAdded(bluePrintData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: bluePrintData.serverName,
+      content: bluePrintData.serverContent
+    })
+  }
+
+  onChangesFirst() {
+    this.serverElements[0].name = 'Changed!';
+  }
 
   onToggleDisplay() {
     this.showSecret = !this.showSecret;
