@@ -3,6 +3,6 @@ export class Ingredients {
   }
 
   push(ingredient: Ingredients) {
-    
+
   }
 }

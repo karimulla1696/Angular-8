@@ -19,6 +19,11 @@ export class AppComponent {
   oddNumbers: number[] = [];
   evenNumbers: number[] = [];
   loadedFeature = 'recipe';
+  // numbers = [1, 2, 3, 4, 5, 6];
+  onlyOdd = false;
+  oddNumber = [1, 3, 5];
+  evenNumber = [1, 2, 4];
+  value = 10;
 
   onSeverAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
