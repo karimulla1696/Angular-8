@@ -16,6 +16,9 @@ export class AppComponent {
   showSecret = false;
   log = [];
   serverElements = [{ type: 'server', name: 'Testserver', content: 'Just a touch!' }];
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
+  loadedFeature = 'recipe';
 
   onSeverAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
@@ -41,5 +44,18 @@ export class AppComponent {
     this.showSecret = !this.showSecret;
     // this.log.push(this.log.length + 1);
     this.log.push(new Date());
+  }
+
+
+  onIntervalField(fireNumber: number) {
+    if (fireNumber % 2 === 0) {
+      this.evenNumbers.push(fireNumber);
+    } else {
+      this.oddNumbers.push(fireNumber);
+    }
+  }
+
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
   }
 }

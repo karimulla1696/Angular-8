@@ -581,31 +581,54 @@
 <!--  </div>-->
 <!--</div>-->
 
-<!--<app-header></app-header>-->
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
+    </div>
+  </div>
+</div>
+
+
 <!--<div class="container">-->
+<!--  <app-cockpit (serverCreated)="onSeverAdded($event)" (bpCreated)="onAddBlueprintAdded($event)"></app-cockpit>-->
+<!--  <hr>-->
 <!--  <div class="row">-->
-<!--    <div class="col-md-12">-->
-<!--      <app-recipes></app-recipes>-->
-<!--      <app-shopping-list></app-shopping-list>-->
+<!--    <div class="col-xs-12">-->
+<!--      <button class="btn btn-primary" (click)="onChangesFirst()">Change first Element</button>-->
+<!--      <button class="btn btn-danger" (click)="onDestoryFirst()">Destory first Element</button>-->
+<!--      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement" [name]="serverElement.name">-->
+<!--        <p #contentParagraph>-->
+<!--          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{serverElement.content}}</strong>-->
+<!--          <em *ngIf="serverElement.type === 'blueprint'">{{serverElement.content}}</em>-->
+<!--        </p>-->
+<!--      </app-server-element>-->
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
 
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--      <h3>Bind it!</h3>-->
+<!--&lt;!&ndash;      <ol>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li></li>&ndash;&gt;-->
+<!--&lt;!&ndash;      </ol>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--      <app-game-control (intervalFired)="onIntervalField($event)"></app-game-control>-->
+<!--    </div>-->
+<!--  </div>-->
 
-<div class="container">
-  <app-cockpit (serverCreated)="onSeverAdded($event)" (bpCreated)="onAddBlueprintAdded($event)"></app-cockpit>
-  <hr>
-  <div class="row">
-    <div class="col-xs-12">
-      <button class="btn btn-primary" (click)="onChangesFirst()">Change first Element</button>
-      <button class="btn btn-danger" (click)="onDestoryFirst()">Destory first Element</button>
-      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement" [name]="serverElement.name">
-        <p #contentParagraph>
-          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{serverElement.content}}</strong>
-          <em *ngIf="serverElement.type === 'blueprint'">{{serverElement.content}}</em>
-        </p>
-      </app-server-element>
-    </div>
-  </div>
-</div>
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--      <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>-->
+<!--      <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
