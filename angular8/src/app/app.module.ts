@@ -23,6 +23,7 @@ import { EvenComponent } from './even/even.component';
 import {BasicHighlightDirective} from "./basic-highlight/basic-highlight.directive";
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
+import {DropdownDirective} from "./shared/dropdown.directive";
 // @ts-ignore
 
 
@@ -48,6 +49,7 @@ import { UnlessDirective } from './unless.directive';
     BasicHighlightDirective,
     BetterHighlightDirective,
     UnlessDirective,
+    DropdownDirective
 
   ],
   imports: [
