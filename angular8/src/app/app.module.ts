@@ -24,6 +24,8 @@ import {BasicHighlightDirective} from "./basic-highlight/basic-highlight.directi
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
 import {DropdownDirective} from "./shared/dropdown.directive";
+import { AccountComponent } from './account/account.component';
+import { NewAccountComponent } from './new-account/new-account.component';
 // @ts-ignore
 
 
@@ -49,7 +51,9 @@ import {DropdownDirective} from "./shared/dropdown.directive";
     BasicHighlightDirective,
     BetterHighlightDirective,
     UnlessDirective,
-    DropdownDirective
+    DropdownDirective,
+    AccountComponent,
+    NewAccountComponent
 
   ],
   imports: [

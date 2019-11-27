@@ -25,6 +25,31 @@ export class AppComponent {
   evenNumber = [1, 2, 4];
   value = 10;
 
+  // services example
+  accounts = [
+    {
+      name: "Master Account",
+      status: 'inactive'
+    },
+    {
+      name: "TestAccount",
+      status: 'inactive'
+    },
+    {
+      name: "Hidden Account",
+      status: 'unknown'
+    }
+  ];
+
+  // services example method
+  onAccountAdded(newAccount: {name: string, status: string}) {
+    this.accounts.push(newAccount);
+  }
+
+  onStatusChanged(updateInfo: {id: number, newStatus: string}) {
+    this.accounts[updateInfo.id].status = updateInfo.newStatus;
+  }
+
   onSeverAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
       type: 'server',
