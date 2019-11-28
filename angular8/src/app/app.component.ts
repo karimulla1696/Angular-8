@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AccountService} from "./account.service";
+import {UsersService} from "./users.service";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import {AccountService} from "./account.service";
     h1{
         color: aqua;
     }
-  `]
+  `],
+  providers: [UsersService]
 })
 export class AppComponent implements OnInit {
   title = 'new App Angular8';

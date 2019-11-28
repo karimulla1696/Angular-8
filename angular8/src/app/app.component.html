@@ -695,19 +695,31 @@
 
 
 <!--    services example    -->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12 col-md-8 col-md-offset-2">-->
 <!--      <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account>-->
-      <app-new-account></app-new-account>
-      <hr>
+<!--      <app-new-account></app-new-account>-->
+<!--      <hr>-->
 <!--      <app-account *ngFor="let acc of accounts; let i = index" [account]="acc" [id]="i" (statusChanged)="onStatusChanged($event)">-->
 
 <!--      </app-account>-->
 
-      <app-account *ngFor="let acc of accounts; let i = index" [account]="acc" [id]="i">
+<!--      <app-account *ngFor="let acc of accounts; let i = index" [account]="acc" [id]="i">-->
 
-      </app-account>
+<!--      </app-account>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--          Service Assigment           -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+<!--      <app-active-users [users]="activeUsers" (userSetToInactive)="($event)"></app-active-users>-->
+<!--      <app-inactive-users [users]="inactiveUsers" (userSetToActive)="($event)"></app-inactive-users>-->
+      <app-active-users></app-active-users>
+      <app-inactive-users></app-inactive-users>
     </div>
   </div>
 </div>

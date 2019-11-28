@@ -28,6 +28,9 @@ import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import {AccountService} from "./account.service";
 import {LoggingService} from "./logging.service";
+import { ActiveUsersComponent } from './active-users/active-users.component';
+import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
+import {CounterService} from "./counter.service";
 // @ts-ignore
 
 
@@ -55,7 +58,9 @@ import {LoggingService} from "./logging.service";
     UnlessDirective,
     DropdownDirective,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
 
   ],
   imports: [
@@ -63,7 +68,7 @@ import {LoggingService} from "./logging.service";
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AccountService, LoggingService],
+  providers: [AccountService, LoggingService, CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
