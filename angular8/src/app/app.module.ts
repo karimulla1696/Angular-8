@@ -26,6 +26,8 @@ import { UnlessDirective } from './unless.directive';
 import {DropdownDirective} from "./shared/dropdown.directive";
 import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
+import {AccountService} from "./account.service";
+import {LoggingService} from "./logging.service";
 // @ts-ignore
 
 
@@ -61,7 +63,7 @@ import { NewAccountComponent } from './new-account/new-account.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AccountService, LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

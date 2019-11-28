@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AccountService} from "./account.service";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { Component } from '@angular/core';
     }
   `]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'new App Angular8';
   username = '';
   showSecret = false;
@@ -26,29 +27,22 @@ export class AppComponent {
   value = 10;
 
   // services example
-  accounts = [
-    {
-      name: "Master Account",
-      status: 'inactive'
-    },
-    {
-      name: "TestAccount",
-      status: 'inactive'
-    },
-    {
-      name: "Hidden Account",
-      status: 'unknown'
-    }
-  ];
+  accounts: {name: string, status: string}[] = [];
+
+  constructor(private accountsService: AccountService) {}
+
+  ngOnInit(): void {
+    this.accounts = this.accountsService.accounts;
+  }
 
   // services example method
-  onAccountAdded(newAccount: {name: string, status: string}) {
-    this.accounts.push(newAccount);
-  }
-
-  onStatusChanged(updateInfo: {id: number, newStatus: string}) {
-    this.accounts[updateInfo.id].status = updateInfo.newStatus;
-  }
+  // onAccountAdded(newAccount: {name: string, status: string}) {
+  //   this.accounts.push(newAccount);
+  // }
+  //
+  // onStatusChanged(updateInfo: {id: number, newStatus: string}) {
+  //   this.accounts[updateInfo.id].status = updateInfo.newStatus;
+  // }
 
   onSeverAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
