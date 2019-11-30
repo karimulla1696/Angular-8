@@ -38,6 +38,9 @@ import { EditServerComponent } from './routing-server/edit-server/edit-server.co
 import {ServersService} from "./routing-server/servers.service";
 import {UserComponent} from "./users/user/user.component";
 import {RoutingServerComponent} from "./routing-server/server/server.component";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {AuthService} from "./auth.service";
+import {AuthGuard} from "./auth-guard.service";
 // @ts-ignore
 
 
@@ -73,15 +76,16 @@ import {RoutingServerComponent} from "./routing-server/server/server.component";
     UsersComponent,
     RoutingServerComponent,
     RoutingServersComponent,
-    EditServerComponent
+    EditServerComponent,
+    PageNotFoundComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [AccountService, LoggingService, CounterService, ServersService],
+  providers: [AccountService, LoggingService, CounterService, ServersService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
