@@ -31,6 +31,13 @@ import {LoggingService} from "./logging.service";
 import { ActiveUsersComponent } from './active-users/active-users.component';
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 import {CounterService} from "./counter.service";
+import {HomeComponent} from "./home/home.component";
+import {UsersComponent} from "./users/users.component";
+import {RoutingServersComponent} from "./routing-server/servers.component";
+import { EditServerComponent } from './routing-server/edit-server/edit-server.component';
+import {ServersService} from "./routing-server/servers.service";
+import {UserComponent} from "./users/user/user.component";
+import {RoutingServerComponent} from "./routing-server/server/server.component";
 // @ts-ignore
 
 
@@ -60,7 +67,13 @@ import {CounterService} from "./counter.service";
     AccountComponent,
     NewAccountComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    HomeComponent,
+    UserComponent,
+    UsersComponent,
+    RoutingServerComponent,
+    RoutingServersComponent,
+    EditServerComponent
 
   ],
   imports: [
@@ -68,7 +81,7 @@ import {CounterService} from "./counter.service";
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AccountService, LoggingService, CounterService],
+  providers: [AccountService, LoggingService, CounterService, ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

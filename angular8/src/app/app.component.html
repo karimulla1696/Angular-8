@@ -713,13 +713,56 @@
 <!--</div>-->
 
 <!--          Service Assigment           -->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12 col-md-8 col-md-offset-2">-->
 <!--      <app-active-users [users]="activeUsers" (userSetToInactive)="($event)"></app-active-users>-->
 <!--      <app-inactive-users [users]="inactiveUsers" (userSetToActive)="($event)"></app-inactive-users>-->
-      <app-active-users></app-active-users>
-      <app-inactive-users></app-inactive-users>
+<!--      <app-active-users></app-active-users>-->
+<!--      <app-inactive-users></app-inactive-users>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--      Routing Examples          -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/">Home</a>
+        </li>
+        <li role="presentation"
+            routerLinkActive="active">
+          <a routerLink="/servers">&nbsp;&nbsp;Servers</a>
+        </li>
+        <li role="presentation"
+            routerLinkActive="active">
+          <a [routerLink]="['/users']">&nbsp;&nbsp;Users</a>
+        </li>
+      </ul>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+<!--      <app-home></app-home>-->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">-->
+<!--      <app-users></app-users>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">-->
+<!--&lt;!&ndash;      <app-servers></app-servers>&ndash;&gt;-->
+<!--      <app-routing-servers></app-routing-servers>-->
+<!--    </div>-->
+<!--  </div>-->
 </div>
+
