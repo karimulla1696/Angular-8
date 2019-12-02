@@ -41,6 +41,9 @@ import {RoutingServerComponent} from "./routing-server/server/server.component";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {AuthService} from "./auth.service";
 import {AuthGuard} from "./auth-guard.service";
+import {CanDeactiveGuard} from "./routing-server/edit-server/can-deactive-guard.service";
+import { ErrorPageComponent } from './error-page/error-page.component';
+import {ServerResolver} from "./routing-server/server/server-resolver.service";
 // @ts-ignore
 
 
@@ -77,7 +80,8 @@ import {AuthGuard} from "./auth-guard.service";
     RoutingServerComponent,
     RoutingServersComponent,
     EditServerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorPageComponent
 
   ],
   imports: [
@@ -85,7 +89,7 @@ import {AuthGuard} from "./auth-guard.service";
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [AccountService, LoggingService, CounterService, ServersService, AuthService, AuthGuard],
+  providers: [AccountService, LoggingService, CounterService, ServersService, AuthService, AuthGuard, CanDeactiveGuard, ServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

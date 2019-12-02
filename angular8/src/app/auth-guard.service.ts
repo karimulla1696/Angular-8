@@ -12,6 +12,7 @@ import {AuthService} from "./auth.service";
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
+  private route: ActivatedRouteSnapshot;
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean  {
@@ -28,5 +29,6 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   }
 
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean  {
+    return this.canActivate(this.route, state);
   }
 }
